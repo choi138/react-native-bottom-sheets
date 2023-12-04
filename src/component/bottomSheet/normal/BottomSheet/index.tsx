@@ -13,7 +13,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {BackDrop} from '../../BackDrop';
+import {BackDrop} from '../BackDrop';
 
 type Props = {
   snapTo: string;

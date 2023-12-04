@@ -1,9 +1,10 @@
 import React, {useCallback, useRef} from 'react';
-import {Button, SafeAreaView} from 'react-native';
+import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {BottomSheet} from '../../component';
-import {NormalBottomSheetMethods} from '../../component/bottomSheet/Normal';
+import {NormalBottomSheetMethods} from '../../component/bottomSheet/normal';
+import {lorem} from '../../constant';
 
 export const NormalScreen: React.FC = () => {
   const blankBottomSheetRef = useRef<NormalBottomSheetMethods>(null);
@@ -53,8 +54,23 @@ export const NormalScreen: React.FC = () => {
             backgroundColor={'white'}
             backDropColor={'black'}
           />
+          <BottomSheet.Normal.Scroll
+            ref={scrollViewBottomSheetRef}
+            snapTo={'50%'}
+            backgroundColor={'white'}
+            backDropColor={'black'}>
+            <View>
+              <Text style={styles.text}>{lorem}</Text>
+            </View>
+          </BottomSheet.Normal.Scroll>
         </SafeAreaView>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 };
+const styles = StyleSheet.create({
+  text: {
+    padding: 10,
+    color: 'black',
+  },
+});
