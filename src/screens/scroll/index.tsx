@@ -24,7 +24,7 @@ export const ScrollScreen: React.FC = () => {
       <View style={styles.container}>
         <TouchableOpacity style={styles.button} onPress={onPress} />
         <BottomSheet.Scroll ref={ref} scrollHeight={SCROLL_HEIGHT}>
-          <View style={{height: 1000, width: '100%'}}>
+          <View style={{height: 'auto', width: '100%'}}>
             <Text style={styles.text}>{lorem}</Text>
           </View>
         </BottomSheet.Scroll>
