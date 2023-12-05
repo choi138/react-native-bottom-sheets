@@ -5,7 +5,7 @@ import {ScrollBottomSheetRefProps} from '../../component/bottomSheet/Scroll';
 import {BottomSheet} from '../../component';
 import {lorem} from '../../constant';
 
-const SCROLL_HEIGHT = -400;
+const SCROLL_HEIGHT = -500;
 
 export const ScrollScreen: React.FC = () => {
   const ref = useRef<ScrollBottomSheetRefProps>(null);
@@ -23,7 +23,11 @@ export const ScrollScreen: React.FC = () => {
     <GestureHandlerRootView style={{flex: 1}}>
       <View style={styles.container}>
         <TouchableOpacity style={styles.button} onPress={onPress} />
-        <BottomSheet.Scroll ref={ref} scrollHeight={SCROLL_HEIGHT} />
+        <BottomSheet.Scroll ref={ref} scrollHeight={SCROLL_HEIGHT}>
+          <View style={{height: 1000, width: '100%'}}>
+            <Text style={styles.text}>{lorem}</Text>
+          </View>
+        </BottomSheet.Scroll>
       </View>
     </GestureHandlerRootView>
   );
